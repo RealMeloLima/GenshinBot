@@ -5,4 +5,4 @@ APP features like love, hate etc;
 Putting him on the cloud;
 Work harder on the code, because now is really messy with all images, it's very ugly;
 And some other more I'll implement later on.
-All credits to the owner of the images, their instagram is @
+All credits to the owner of the images, their instagram is @genshin_brasil
