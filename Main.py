@@ -237,4 +237,4 @@ async def build(context):
 
 
 
-client.run('MTA2NjQxNTkyMzQyODM0MzkxOQ.GXXrAa.hrC-UZH3etGzR--TeRR7bD19iLScpjuNY2KS_8')
+client.run('YOUR TOKEN GOES HERE)
