@@ -14,7 +14,7 @@ async def on_ready():
     print(f'Im ready and logged on {client.user}')
 
 
-items = ['Albedo', 'Ayaka' , 'Bennett', 'Childe' , 'Collei' ,'Cyno', 'Diluc', 'Eula' , 'Faruzan', 'Fischl', 'Ganyu', 'Heizou', 'Hu tao', 'Itto', 'Kazuha', 'Mona', 'Qiqi', 'Rainden', 'Sara', 'Sayu', 'Shinobu', 'Sucrose', 'Thoma', 'Tighnari', 'Venti', 'Wanderer', 'Xiao', 'Xinyan', 'Yanfei', 'Yelan', 'Yoimiya', 'Zhongli' ]
+items = ['Albedo', 'Ayaka' , 'Bennett', 'Childe' , 'Collei' ,'Cyno', 'Diluc', 'Eula' , 'Faruzan', 'Fischl', 'Ganyu', 'Gorou' ,'Heizou', 'Hu tao', 'Itto', 'Kazuha', 'Mona', 'Qiqi', 'Rainden', 'Sara', 'Sayu', 'Shinobu', 'Sucrose', 'Thoma', 'Tighnari', 'Venti', 'Wanderer', 'Xiao', 'Xinyan', 'Yanfei', 'Yelan', 'Yoimiya', 'Zhongli' ]
 
 paginator = Paginator()
 paginator.items_per_page = 10
@@ -240,8 +240,10 @@ async def build(context):
 async def build(context):
     await context.message.channel.send('Here you have your Collei build, enjoy it :)')
     await context.message.channel.send(file=dc.File("collei.png"))
+# GOROU
+@client.command(name = 'Gorou')
+async def build(context):
+    await context.message.channel.send('Here you have your Gorou build, enjoy it :)')
+    await context.message.channel.send(file=dc.File("gorou.png"))
 
-client.run('MTA2NjQxNTkyMzQyODM0MzkxOQ.GIqaYr.Kjz7cklmtf4iHgUA7jL_9z_0azUMRW6mT69_bs')
-
-
-
+client.run('')
