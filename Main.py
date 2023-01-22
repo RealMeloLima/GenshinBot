@@ -19,12 +19,11 @@ async def build(context):
 ```Faruzan
 Wanderer
 Tighnari
-Gyno
+Cyno
 Albedo
 Xiao
 Shinobu
 Yelan
-Yoimiya (1)
 Heizou
 Kazuha
 Thoma
@@ -36,7 +35,7 @@ Ganyu
 Xinyan
 Qiqi
 Eula
-Yoimiya (2)
+Yoimiya
 Fischl
 Venti
 Sucrose
@@ -68,11 +67,11 @@ async def build(context):
     await context.message.channel.send('Here you have your Tighnari build, enjoy it :)')
     await context.message.channel.send(file=dc.File("Tighnari.png"))
 
-# GYNO
-@client.command(name = 'Gyno')
+# CYNO
+@client.command(name = 'Cyno')
 async def build(context):
-    await context.message.channel.send('Here you have your Gyno build, enjoy it :)')
-    await context.message.channel.send(file=dc.File("gyno.png"))
+    await context.message.channel.send('Here you have your Cyno build, enjoy it :)')
+    await context.message.channel.send(file=dc.File("cyno.png"))
 
 # ALBEDO
 @client.command(name = 'Albedo')
@@ -97,12 +96,6 @@ async def build(context):
 async def build(context):
     await context.message.channel.send('Here you have your Yelan build, enjoy it :)')
     await context.message.channel.send(file=dc.File("yelan.png"))
-
-# YOIMIYA(1)
-@client.command(name = 'Yoimiya (1)')
-async def build(context):
-    await context.message.channel.send('Here you have your Yoimiya (1) build, enjoy it :)')
-    await context.message.channel.send(file=dc.File("yoimiya(1).png"))
 
 # HEIZOU
 @client.command(name = 'Heizou')
@@ -170,11 +163,11 @@ async def build(context):
     await context.message.channel.send('Here you have your Eula build, enjoy it :)')
     await context.message.channel.send(file=dc.File("eula.png"))
 
-# YOIMIYA(2)
-@client.command(name = 'Yoimiya(2)')
+# YOIMIYA
+@client.command(name = 'Yoimiya')
 async def build(context):
-    await context.message.channel.send('Here you have your Yoimiya(2) build, enjoy it :)')
-    await context.message.channel.send(file=dc.File("yoimiya(2).png"))
+    await context.message.channel.send('Here you have your Yoimiya build, enjoy it :)')
+    await context.message.channel.send(file=dc.File("yoimiya.png"))
 
 # FISCHL
 @client.command(name = 'Fischl')
@@ -194,7 +187,6 @@ async def build(context):
     await context.message.channel.send('Here you have your Sucrose build, enjoy it :)')
     await context.message.channel.send(file=dc.File("sucrose.png"))
 
-
 # YANFEI
 @client.command(name = 'Yanfei')
 async def build(context):
@@ -207,11 +199,11 @@ async def build(context):
     await context.message.channel.send('Here you have your Sayu build, enjoy it :)')
     await context.message.channel.send(file=dc.File("sayu.png"))
 
-# RAYDEN
-@client.command(name = 'Rayden')
+# RAIDEN
+@client.command(name = 'Raiden')
 async def build(context):
-    await context.message.channel.send('Here you have your Rayden build, enjoy it :)')
-    await context.message.channel.send(file=dc.File("rayden.png"))
+    await context.message.channel.send('Here you have your Raiden build, enjoy it :)')
+    await context.message.channel.send(file=dc.File("raiden.png"))
 
 # AYAKA
 @client.command(name = 'Ayaka')
@@ -232,9 +224,9 @@ async def build(context):
     await context.message.channel.send(file=dc.File("hutao.png"))
 
 # BENNETTE
-@client.command(name = 'Bennette')
+@client.command(name = 'Bennett')
 async def build(context):
-    await context.message.channel.send('Here you have your Bennette build, enjoy it :)')
+    await context.message.channel.send('Here you have your Bennett build, enjoy it :)')
     await context.message.channel.send(file=dc.File("bennette.png"))
 
 # DILUC
@@ -245,4 +237,4 @@ async def build(context):
 
 
 
-client.run('MTA2NjQxNTkyMzQyODM0MzkxOQ.GKRqSK.yQIGz8rw1zrVf-UXFTpBHK_uwmRxXDbxWtLjvM')
+client.run('MTA2NjQxNTkyMzQyODM0MzkxOQ.GXXrAa.hrC-UZH3etGzR--TeRR7bD19iLScpjuNY2KS_8')
