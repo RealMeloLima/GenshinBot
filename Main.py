@@ -242,9 +242,5 @@ async def build(context):
     await context.message.channel.send(file=dc.File("collei.png"))
 
 
-<<<<<<< HEAD
+client.run('YOUR TOKEN GOES HERE')
 
-client.run('MTA2NjQxNTkyMzQyODM0MzkxOQ.GgexUJ.XAG1JrPHxAsVfddKPBmDYKklD_Uo1PWBK6YCH0')
-=======
-client.run('YOUR TOKEN GOES HERE)
->>>>>>> e0bbd13442a2580a919f586c66ba6a0c6681b747
