@@ -1,7 +1,9 @@
 import discord as dc
 from discord.ext import commands
+from discord.ext.commands import Paginator
 from discord.flags import Intents
 import asyncio
+
 
 
 intents = dc.Intents.all()
@@ -12,43 +14,41 @@ async def on_ready():
     print(f'Im ready and logged on {client.user}')
 
 
+items = ['Albedo', 'Ayaka' , 'Bennett', 'Childe' , 'Collei' ,'Cyno', 'Diluc', 'Eula' , 'Faruzan', 'Fischl', 'Ganyu', 'Heizou', 'Hu tao', 'Itto', 'Kazuha', 'Mona', 'Qiqi', 'Rainden', 'Sara', 'Sayu', 'Shinobu', 'Sucrose', 'Thoma', 'Tighnari', 'Venti', 'Wanderer', 'Xiao', 'Xinyan', 'Yanfei', 'Yelan', 'Yoimiya', 'Zhongli' ]
 
-@client.command(name = 'builds')
-async def build(context):
-    await context.message.channel.send("""  Hello! Here are the builds I have on now :)
-```Faruzan
-Wanderer
-Tighnari
-Cyno
-Albedo
-Xiao
-Shinobu
-Yelan
-Heizou
-Kazuha
-Thoma
-Itto
-Mona
-Sara
-Childe
-Ganyu
-Xinyan
-Qiqi
-Eula
-Yoimiya
-Fischl
-Venti
-Sucrose
-Yanfei
-Sayu
-Rainden
-Ayaka
-Zhongli
-Hu tao
-Bennett
-Diluc ```
-Don't forget to add the '?' at the beggining of the character name to see his build """)
+paginator = Paginator()
+paginator.items_per_page = 10
+for item in items:
+    paginator.add_line(item)
 
+
+@client.command(name='list')
+async def list_items(ctx):
+    for page in paginator.pages:
+        await ctx.send(page)
+
+@client.command(name='builds')
+async def list_items(ctx):
+    current_page = 0
+    message = await ctx.send(paginator.pages[current_page])
+    await message.add_reaction("⬅️")
+    await message.add_reaction("➡️")
+
+    def check(reaction, user):
+        return user == ctx.author and str(reaction.emoji) in ["⬅️", "➡️"]
+
+    while True:
+        try:
+            reaction, user = await client.wait_for('reaction_add', timeout=30.0, check=check)
+            if str(reaction.emoji) == "⬅️":
+                current_page = max(current_page - 1, 0)
+                await message.edit(content=paginator.pages[current_page])
+            elif str(reaction.emoji) == "➡️":
+                current_page = min(current_page + 1, len(paginator.pages) - 1)
+                await message.edit(content=paginator.pages[current_page])
+        except asyncio.TimeoutError:
+            break
+        
 # FARUZAN
 @client.command(name = 'Faruzan')
 async def build(context):
@@ -235,6 +235,12 @@ async def build(context):
     await context.message.channel.send('Here you have your Diluc build, enjoy it :)')
     await context.message.channel.send(file=dc.File("diluc.png"))
 
+# COLLEI
+@client.command(name = 'Collei')
+async def build(context):
+    await context.message.channel.send('Here you have your Collei build, enjoy it :)')
+    await context.message.channel.send(file=dc.File("collei.png"))
 
 
-client.run('MTA2NjQxNTkyMzQyODM0MzkxOQ.GXXrAa.hrC-UZH3etGzR--TeRR7bD19iLScpjuNY2KS_8')
+
+client.run('MTA2NjQxNTkyMzQyODM0MzkxOQ.GgexUJ.XAG1JrPHxAsVfddKPBmDYKklD_Uo1PWBK6YCH0')
