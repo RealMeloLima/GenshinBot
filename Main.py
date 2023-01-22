@@ -246,4 +246,4 @@ async def build(context):
     await context.message.channel.send('Here you have your Gorou build, enjoy it :)')
     await context.message.channel.send(file=dc.File("gorou.png"))
 
-client.run('')
+client.run('YOUR TOKEN GOES HERE')
