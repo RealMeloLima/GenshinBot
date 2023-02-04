@@ -57,4 +57,4 @@ for item in items:
     build_func(item)
 
 
-client.run('')
+client.run('YOUR TOKEN GOES HERE')
