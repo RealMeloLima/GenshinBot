@@ -14,7 +14,7 @@ async def on_ready():
     print(f'Im ready and logged on {client.user}')
 
 # LISTA DOS PERSONAGENS
-items = ['Albedo', 'Ayaka' , 'Bennett', 'Childe' , 'Collei' ,'Cyno', 'Diluc', 'Eula' , 'Faruzan', 'Fischl', 'Ganyu', 'Gorou' ,'Heizou', 'Hu tao', 'Itto', 'Kazuha', 'Mona', 'Qiqi', 'Rainden', 'Sara', 'Sayu', 'Shinobu', 'Sucrose', 'Thoma', 'Tighnari', 'Venti', 'Wanderer', 'Xiao', 'Xinyan', 'Yanfei', 'Yelan', 'Yoimiya', 'Zhongli']
+items = ['Albedo', 'Alhaitham', 'Ayaka' , 'Bennett', 'Childe' , 'Collei' ,'Cyno', 'Diluc', 'Eula' , 'Faruzan', 'Fischl', 'Ganyu', 'Gorou' ,'Heizou', 'Hu tao', 'Itto', 'Kazuha', 'Mona', 'Qiqi', 'Rainden', 'Sara', 'Sayu', 'Shinobu', 'Sucrose', 'Thoma', 'Tighnari', 'Venti', 'Wanderer', 'Xiao', 'Xinyan', 'Yanfei', 'YaoYao', 'Yelan', 'Yoimiya', 'Zhongli']
 
 paginator = Paginator()
 paginator.items_per_page = 10
