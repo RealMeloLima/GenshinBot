@@ -9,13 +9,21 @@ intents = dc.Intents.all()
 
 client = commands.Bot(command_prefix='?', intents = intents)
 
+# HELP
+@client.command(name='Help')
+async def help(ctx):
+    await ctx.message.channel.send("""Feeling lost ? The following commands are currently avaiable:
+```?builds (all builds avaiable))
+?Character name (ex: ?Qiqi)```
+For any futher questions send to my Github:https://github.com/RealMeloLima""")
+
 # TESTE
 @client.event
 async def on_ready():
     print(f'Im ready and logged on {client.user}')
 
 # LISTA DOS PERSONAGENS
-items = ['Albedo', 'Alhaitham', 'Ayaka' , 'Bennett', 'Childe' , 'Collei' ,'Cyno', 'Diluc', 'Eula' , 'Faruzan', 'Fischl', 'Ganyu', 'Gorou' ,'Heizou', 'Hu tao', 'Itto', 'Kazuha', 'Mona', 'Qiqi', 'Rainden', 'Sara', 'Sayu', 'Shinobu', 'Sucrose'  , 'Thoma', 'Tighnari', 'Venti', 'Wanderer', 'Xiao', 'Xinyan', 'Yanfei', 'YaoYao', 'Yelan', 'Yoimiya', 'Zhongli']
+items = ['Albedo', 'Alhaitham', 'Ayaka' , 'Bennett', 'Childe' , 'Collei' ,'Cyno', 'Diluc', 'Eula' , 'Faruzan', 'Fischl', 'Ganyu', 'Gorou' ,'Heizou', 'Hutao', 'Itto', 'Kazuha', 'Mona', 'Nahida' ,'Qiqi', 'Rainden', 'Sara', 'Sayu', 'Shinobu', 'Sucrose'  , 'Thoma', 'Tighnari', 'Venti', 'Wanderer', 'Xiao', 'Xingqiu' ,'Xinyan', 'Yanfei', 'YaoYao', 'Yelan', 'Yoimiya', 'Zhongli']
 pages = [items[i:i + 10] for i in range(0, len(items), 10)]
 
 @client.command(name='Builds')
@@ -49,8 +57,8 @@ for item in items:
             if not os.path.exists(file_name):
                 await ctx.message.channel.send("Sorry, We do not have this build right now :(")
                 return
-            await ctx.message.channel.send(f'Here you have your {item} build, enjoy it :)')
+            await ctx.message.channel.send(f"Here's you {item} build, enjoy it :)")
             await ctx.message.channel.send(file=dc.File(file_name))
     build_func(item)
 
-client.run('MTA2NjQxNTkyMzQyODM0MzkxOQ.G7uZXT.HPTqcI2PGIowvjo4SBRdR6j6JYekYZ_3D54qBg')
+client.run('MTA2NjQxNTkyMzQyODM0MzkxOQ.GhbcnW.N91zW5fxPMssV5YymSYfrH0QhJeZA_i_ECJ8yw')
