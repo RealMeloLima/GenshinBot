@@ -61,4 +61,4 @@ for item in items:
             await ctx.message.channel.send(file=dc.File(file_name))
     build_func(item)
 
-client.run('MTA2NjQxNTkyMzQyODM0MzkxOQ.GhbcnW.N91zW5fxPMssV5YymSYfrH0QhJeZA_i_ECJ8yw')
+client.run('Your TOKEN goes here')
