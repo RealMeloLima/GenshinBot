@@ -14,7 +14,8 @@ client = commands.Bot(command_prefix='?', intents = intents)
 async def help(ctx):
     await ctx.message.channel.send("""Feeling lost ? The following commands are currently avaiable:
 ```?builds (all builds avaiable))
-?Character name (ex: ?Qiqi)```
+?Character name (ex: ?Qiqi)
+?Banner (Current and next Banners)```
 For any futher questions send to my Github:https://github.com/RealMeloLima""")
 
 # TESTE
