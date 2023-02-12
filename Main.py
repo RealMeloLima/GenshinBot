@@ -24,7 +24,7 @@ async def on_ready():
     print(f'Im ready and logged on {client.user}')
 
 # LISTA DOS PERSONAGENS
-items = ['Albedo', 'Alhaitham', 'Ayaka' , 'Bennett', 'Childe' , 'Collei' ,'Cyno', 'Diluc', 'Eula' , 'Faruzan', 'Fischl', 'Ganyu', 'Gorou' ,'Heizou', 'Hutao', 'Itto', 'Kazuha', 'Mona', 'Nahida' ,'Qiqi', 'Rainden', 'Sara', 'Sayu', 'Shinobu', 'Sucrose'  , 'Thoma', 'Tighnari', 'Venti', 'Wanderer', 'Xiao', 'Xingqiu' ,'Xinyan', 'Yanfei', 'YaoYao', 'Yelan', 'Yoimiya', 'Zhongli']
+items = ['Albedo', 'Alhaitham', 'Aloy', 'Amber_DPS', 'Amber_SUP','Ayaka', ' Ayato', 'Barbara', 'Beidou' ,'Bennett','Candace' ,'Childe', 'Chongyun' ,'Collei' ,'Cyno', 'Diluc', 'Diona', 'Dori' ,'Eula' , 'Faruzan', 'Fischl', 'Ganyu', 'Gorou' ,'Heizou', 'Hutao', 'Itto', 'Jean', 'Kaeya', 'Kazuha', 'Keqing', 'Klee', 'Kokomi', 'Layla', 'Lisa', 'Mona', 'Mona_FREEZE', 'Mona_NUKE', 'Nahida', 'Nilou', 'Ningguang', 'Noelle', 'Qiqi', 'Rainden', 'Razor', 'Rosaria' ,'Sara', 'Sayu', 'Shenhe' ,'Shinobu', 'Shogun', 'Sucrose', 'Tartaglia' ,'Thoma', 'Tighnari', 'Venti', 'Wanderer', 'Xiangling' ,'Xiao', 'Xingqiu' ,'Xinyan', 'Yaemiko' ,'Yanfei', 'YaoYao', 'Yelan', 'Yoimiya', 'Yunjin' ,'Zhongli']
 pages = [items[i:i + 10] for i in range(0, len(items), 10)]
 
 @client.command(name='Builds')
@@ -49,17 +49,25 @@ async def list_items(ctx):
                 await message.edit(content="```\n" + "\n".join(pages[current_page]) + "```")
         except asyncio.TimeoutError:
             break
+
 # IMAGEM DO PERSONAGEM   
 for item in items:
-    def build_func(item):
+    path = 'C:/Users/Paulo R. Melo Lima/Documents/GitHub/GenshinBot/imagens'
+    file_name = os.path.join(path, f"{item.lower()}.png")
+    def build_func(item, file_name):
         @client.command(name=item)
         async def build(ctx):
-            file_name = f"{item.lower()}.png"
             if not os.path.exists(file_name):
                 await ctx.message.channel.send("Sorry, We do not have this build right now :(")
                 return
             await ctx.message.channel.send(f"Here's you {item} build, enjoy it :)")
             await ctx.message.channel.send(file=dc.File(file_name))
-    build_func(item)
+    build_func(item, file_name)
+
+# BANNER (ROTATIVO)
+@client.command(name='Banner')
+async def banner(ctx):
+    await ctx.message.channel.send("Crrent aund future Banners. Enjoy it :)")
+    await ctx.message.channel.send(file=dc.File('banner.png'))
 
 client.run('Your TOKEN goes here')
